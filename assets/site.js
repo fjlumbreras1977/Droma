@@ -217,3 +217,36 @@
   }, {passive:true});
   updateScroll();
 })();
+// Local sound studio: open the requested tool and keep deep links synchronized.
+(() => {
+  const frame = document.getElementById('sound-studio');
+  if (frame) {
+    const routes = new Set(['home','noise','eq','master','mp3','tags','audio','ivoox','qr','library','batch','share','instructions']);
+    const route = () => routes.has(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
+    frame.src = 'app.html#' + route();
+    frame.addEventListener('load', () => {
+      try {
+        frame.contentWindow.addEventListener('hashchange', () => {
+          const current = frame.contentWindow.location.hash.slice(1);
+          if (routes.has(current) && location.hash !== '#' + current) {
+            history.replaceState(null, '', location.pathname + location.search + '#' + current);
+          }
+        });
+      } catch (_) { /* Navigation continues to work through the embedded studio. */ }
+    });
+    window.addEventListener('hashchange', () => {
+      try { if (frame.contentWindow.location.hash !== '#' + route()) frame.contentWindow.location.hash = route(); }
+      catch (_) { frame.src = 'app.html#' + route(); }
+    });
+  }
+  const buttons = [...document.querySelectorAll('[data-audio-filter]')];
+  const groups = [...document.querySelectorAll('[data-audio-group]')];
+  buttons.forEach(button => button.addEventListener('click', () => {
+    const category = button.dataset.audioFilter;
+    buttons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    groups.forEach(group => {
+      group.hidden = category !== 'all' && group.dataset.audioGroup !== category;
+      if (!group.hidden) group.querySelectorAll('.reveal').forEach(card => card.classList.add('visible'));
+    });
+  }));
+})();
