@@ -221,8 +221,8 @@
 (() => {
   const frame = document.getElementById('sound-studio');
   if (frame) {
-    const studioDocument = 'app.html?v=20261018-scroll';
-    const routes = new Set(['home','separate','noise','eq','master','mp3','tags','audio','ivoox','qr','library','batch','share','instructions']);
+    const studioDocument = 'app.html?v=20261018-entrega2';
+    const routes = new Set(['audiogram','extract','duck','home','separate','noise','eq','master','mp3','tags','audio','ivoox','qr','library','batch','share','instructions']);
     const route = () => routes.has(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
     frame.src = studioDocument + '#' + route();
     frame.addEventListener('load', () => {
