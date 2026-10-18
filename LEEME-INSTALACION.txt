@@ -1,0 +1,137 @@
+DRÖMA · WEB LISTA PARA TU HOSTING
+
+VERSIÓN 18.10.2026 · REVISIÓN 2
+
+ESTE ZIP CONTIENE LA WEB LISTA PARA EXTRAER EN SU CARPETA DE DESTINO.
+index.html está en la raíz del ZIP, junto a assets y estudio-sonido.
+
+INSTALACIÓN O ACTUALIZACIÓN
+1. Guarda una copia de la carpeta actual de Dröma en tu hosting.
+2. Sube y extrae este ZIP en LA MISMA carpeta donde está el index.html
+   de Dröma. Acepta reemplazar los archivos existentes, incluidas las
+   carpetas assets, estudio-sonido y herramientas-audio.
+3. Si descomprimes en tu ordenador, sube TODO el contenido extraído
+   directamente a esa carpeta de destino. No crees otra carpeta intermedia.
+4. Abre tu web y pulsa Ctrl+F5 (Windows) o Cmd+Mayúsculas+R (Mac).
+   Si tu hosting dispone de una caché de páginas o CDN, vacíala también.
+5. En Sonido > Todas las herramientas deben aparecer doce herramientas.
+   Busca Mezclador de voz y música, Extraer audio de vídeo y Audiogramas.
+
+ACCESOS PARA COMPROBAR LAS NOVEDADES
+Desde la dirección donde has instalado Dröma:
+- estudio-sonido/#duck       Mezclador automático de voz y música
+- estudio-sonido/#extract    Extractor de audio de vídeos locales
+- estudio-sonido/#audiogram  Creador de audiogramas
+
+Puedes abrir VERSION-DROMA.txt en esa misma dirección para comprobar
+que el servidor está mostrando esta entrega: 2026.10.18-r2.
+
+QUÉ NECESITA
+Un hosting que sirva archivos HTML, CSS, JavaScript e imágenes y que
+reconozca index.html como página de inicio. No requiere WordPress, PHP,
+Node.js, base de datos, Python ni instalaciones para funcionar.
+Conserva todos los nombres y la estructura de carpetas.
+
+QUÉ INCLUYE
+Veintisiete páginas, página 404, logo, fuentes e imágenes locales, animaciones,
+selector de herramienta, demo sonora, buscador de ayuda y guías prácticas.
+Los enlaces internos y recursos funcionan en la raíz o en una subcarpeta.
+Los dos editores se abren en sus direcciones originales de GitHub Pages.
+Este paquete incluye la web y el estudio integrado con las doce herramientas
+de sonido, proyectos, lotes y tarjetas. Los editores multipista y fotográfico
+siguen abriéndose en sus enlaces externos.
+
+CONVERSIÓN DE VARIOS ARCHIVOS A MP3
+En Sonido > Convertir a MP3 puedes seleccionar o arrastrar varios audios.
+Elige calidad y canales y pulsa Convertir. La lista avanza automáticamente
+uno a uno para cuidar la memoria. El límite es de 100 MB por archivo.
+Descarga cada resultado o pulsa Descargar ZIP para reunir los terminados.
+Un archivo que falle no detiene los demás. Cancelar conserva los resultados;
+puedes continuar con los pendientes. Usa Reconvertir para repetir un archivo
+con ajustes nuevos. Vaciar lista retira los archivos del conversor.
+Los audios se procesan en el navegador y no se suben al servidor.
+
+SEPARADOR DE VOZ Y MÚSICA CON IA
+Está en Sonido > Separar voz y música. Usa la web mediante HTTPS.
+La primera vez descarga un modelo de unos 180 MB desde Hugging Face.
+El modelo puede quedar guardado en la caché del navegador; borrarla
+obliga a descargarlo de nuevo. El audio no se envía al servidor.
+Requiere conexión para esa descarga y memoria suficiente en el equipo.
+Puedes procesar la canción completa (hasta 10 minutos y 150 MB) o
+probar los primeros 30 segundos. El proceso puede tardar varios minutos.
+Entrega dos WAV estéreo de 16 bits y 44,1 kHz: voz y música.
+Pueden quedar restos de voz o de música, según la mezcla original.
+Sube también todos los archivos de assets/separation, incluidos los .mjs,
+.wasm y las licencias. El hosting debe servir .mjs como JavaScript y .wasm
+como WebAssembly. No necesita servidor de IA, API de pago ni instalación.
+El modelo se obtiene de su dirección pública fijada en model.json.
+Las licencias MIT y la atribución del motor se incluyen en la herramienta.
+
+MEZCLADOR DE VOZ Y MÚSICA
+Sonido > Mezclador de voz y música. Carga una locución y una base de hasta
+100 MB cada una. Ajusta el nivel musical, reducción bajo voz, umbral,
+ataque y recuperación. Puedes añadir hasta 20 s de entrada y salida
+musical y repetir la base si es corta. La mezcla admite hasta 10 minutos.
+La detección sigue el nivel de la voz; escucha y ajusta si también detecta
+ruido. La protección de picos atenúa toda la mezcla cuando es necesario.
+Descarga WAV estéreo de 16 bits a 44,1 kHz o MP3 de 192 kbps. Puedes
+enviar el resultado directamente al creador de audiogramas.
+
+EXTRACTOR DE AUDIO DE VÍDEOS
+Sonido > Extraer audio de vídeo. Elige un vídeo local de hasta 250 MB.
+La compatibilidad depende de la pista de audio y del navegador: MP4/M4V
+con AAC, WebM con Opus o Vorbis y algunos MOV. Si no puede decodificarse,
+se informa. No descarga vídeos de Internet ni elimina protecciones.
+Extrae hasta 10 minutos en WAV de 16 bits o MP3 de 128/192/256/320 kbps,
+conservando mono/estéreo o pasando a mono. Escucha, descarga o envía el
+audio al creador de audiogramas.
+
+CREADOR DE AUDIOGRAMAS
+Sonido > Creador de audiogramas. Abre un audio de hasta 150 MB y elige
+hasta 5 minutos. Añade fotografía JPG/PNG/WebP y logo (hasta 20 MB cada
+imagen), títulos, color y subtítulos. Elige vertical, cuadrado u horizontal,
+en HD (720x1280, 720x720, 1280x720) o Full HD (1080x1920, 1080x1080,
+1920x1080). Previsualiza con sonido antes de crear el vídeo.
+Los subtítulos se escriben y temporizan manualmente, se reparten desde
+un texto pegado o se importan desde SRT/VTT. No hay transcripción
+automática de voz. Se incrustan en el vídeo y se pueden descargar en SRT
+con los tiempos adaptados al fragmento. También puedes descargar un PNG.
+El navegador indica antes de empezar si puede exportar MP4 o WebM.
+El vídeo se crea en tiempo real: tarda lo que dura el fragmento. Mantén
+la pestaña visible. Si la ocultas o sales del módulo, se cancela el vídeo.
+La exportación depende de MediaRecorder y de los códecs del navegador;
+se recomienda un navegador de escritorio actualizado y conexión HTTPS.
+
+LOS TRES MÓDULOS NUEVOS
+El procesamiento es local y no necesita API de pago ni servidor multimedia.
+Los archivos y diseños se mantienen temporalmente en memoria, sin guardado
+automático de proyecto. Descarga los resultados antes de cerrar o recargar.
+Sube también assets/media, assets/audiogram y assets/video-audio.
+El hosting debe servir .mjs como JavaScript. El códec LAME/lamejs y su
+archivo de fuentes y licencias se incluyen en assets/media.
+
+DOMINIO Y SEO (OPCIONAL)
+La navegación ya funciona sin configurar el dominio. Las referencias
+canónicas y los metadatos internos utilizan rutas relativas.
+Para fijar un dominio definitivo en esos metadatos y crear sitemap.xml,
+puedes usar CONFIGURAR-SEO.py en tu ordenador, antes de subir la web:
+
+  python CONFIGURAR-SEO.py https://tudominio.com/
+
+Si la vas a instalar en una subcarpeta:
+
+  python CONFIGURAR-SEO.py https://tudominio.com/droma/
+
+Python solo se necesita para este ajuste opcional en tu ordenador.
+El alojamiento no lo necesita. Usa la URL completa y definitiva.
+CONFIGURAR-SEO.py es opcional: ejecútalo en tu ordenador, junto a index.html.
+
+IMPORTANTE AL PUBLICAR
+La web será accesible conforme a la configuración de tu propio hosting.
+Usa HTTPS. Para una página 404 personalizada, selecciona 404.html desde
+las opciones de tu alojamiento; no se imponen reglas de servidor.
+
+EDICIÓN
+El contenido está en cada index.html. El diseño común se encuentra en
+assets/site.css y las interacciones en assets/site.js.
+Antes de modificar un archivo, guarda una copia del paquete original.

@@ -1,0 +1,8 @@
+DRÖMA · 2026.10.18-r2
+
+Incluye:
+- Mezclador automático de voz y música (ducking).
+- Extractor de audio de vídeos locales.
+- Creador de audiogramas con fotografía, logo, onda animada y subtítulos manuales o SRT/VTT.
+
+Doce herramientas en el estudio. Estética negra y verde.
