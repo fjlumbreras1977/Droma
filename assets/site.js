@@ -4,34 +4,81 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const icon = (kind) => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor"><path d="${kind === 'pause' ? 'M9 5v14m6-14v14' : 'm9 5 11 7-11 7V5Z'}"/></svg>`;
-  // Content stays visible when JavaScript or animation APIs are unavailable.
-  if ('IntersectionObserver' in window) {
-    document.documentElement.classList.add('js');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold: 0.06, rootMargin: '0px 0px -15px 0px'});
-    $$('.reveal').forEach(el => observer.observe(el));
+  // Resolve the suite home from its own script, including subfolder hosting.
+  if (document.currentScript?.src) {
+    const homeURL = new URL('../index.html', document.currentScript.src);
+    $$('[data-home-link]').forEach(a => { a.href = homeURL.href; a.removeAttribute('target'); });
   }
+  const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+  const entryAnimations = new Map();
   let paused = false;
   try { paused = localStorage.getItem('droma-motion-paused') === 'true'; } catch (_) {}
   const motionButton = $('.motion-controls');
+  const motionAllowed = () => !paused && !reducedMotion?.matches;
+  function animateEntry(node, frames, options = {}) {
+    if (!node?.animate || !motionAllowed()) return;
+    const previous = entryAnimations.get(node);
+    if (previous) { try { previous.cancel(); } catch (_) {} }
+    try {
+      const animation = node.animate(frames, {duration: 300, easing: 'cubic-bezier(.22,.61,.36,1)', fill: 'backwards', ...options});
+      entryAnimations.set(node, animation);
+      const clear = () => { if (entryAnimations.get(node) === animation) entryAnimations.delete(node); };
+      animation.finished?.then(clear, clear);
+    } catch (_) { /* Content retains its visible base style. */ }
+  }
   function setMotion(next) {
     paused = next;
-    document.documentElement.classList.toggle('motion-paused', paused);
+    const reduced = !!reducedMotion?.matches;
+    const stopped = paused || reduced;
+    document.documentElement.classList.toggle('motion-paused', stopped);
+    if (stopped) {
+      for (const animation of entryAnimations.values()) { try { animation.finish(); } catch (_) { animation.cancel(); } }
+      entryAnimations.clear();
+      $$('.reveal').forEach(node => node.classList.add('visible'));
+    }
     if (motionButton) {
-      motionButton.setAttribute('aria-pressed', String(paused));
-      motionButton.innerHTML = icon(paused ? 'play' : 'pause') + `<span>${paused ? 'Activar animaciones' : 'Pausar animaciones'}</span>`;
+      motionButton.disabled = reduced;
+      motionButton.setAttribute('aria-pressed', String(stopped));
+      motionButton.title = reduced ? 'Tu dispositivo tiene activada la preferencia de movimiento reducido.' : '';
+      motionButton.innerHTML = icon(stopped ? 'play' : 'pause') + `<span>${reduced ? 'Movimiento reducido' : paused ? 'Activar animaciones' : 'Pausar animaciones'}</span>`;
     }
   }
   setMotion(paused);
   motionButton?.addEventListener('click', () => {
     setMotion(!paused);
     try { localStorage.setItem('droma-motion-paused', String(paused)); } catch (_) {}
+  });
+  reducedMotion?.addEventListener?.('change', () => setMotion(paused));
+  // Reveal failures must never leave sections hidden.
+  if ('IntersectionObserver' in window && motionAllowed()) {
+    let observer;
+    try {
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, {threshold: 0.06, rootMargin: '0px 0px -15px 0px'});
+      document.documentElement.classList.add('js');
+      $$('.reveal').forEach(node => {
+        const siblings = [...node.parentElement.children].filter(n => n.classList.contains('reveal'));
+        node.style.setProperty('--reveal-delay', Math.min(siblings.indexOf(node), 3) * 70 + 'ms');
+        observer.observe(node);
+      });
+    } catch (_) {
+      observer?.disconnect();
+      document.documentElement.classList.remove('js');
+      $$('.reveal').forEach(node => node.classList.add('visible'));
+    }
+  }
+  window.addEventListener('pageshow', event => {
+    if (!event.persisted) return;
+    $$('.reveal').forEach(node => {
+      const rect = node.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < window.innerHeight) node.classList.add('visible');
+    });
+  });
+  $$('.hero-copy > *, .page-hero .eyebrow, .page-hero h1, .page-hero .lead').forEach((node, i) => {
+    animateEntry(node, [{opacity: 0, transform: 'translateY(14px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 560, delay: Math.min(i, 5) * 65});
   });
   // Main navigation and product chooser.
   const menuButton = $('.mobile-toggle');
@@ -46,12 +93,15 @@
     menuButton.setAttribute('aria-expanded', String(expanded));
     menuButton.setAttribute('aria-label', expanded ? 'Cerrar menú' : 'Abrir menú');
     navigation?.classList.toggle('mobile-open', expanded);
+    if (expanded) animateEntry(navigation, [{opacity: 0, transform: 'translateY(-8px)'}, {opacity: 1, transform: 'translateY(0)'}]);
   });
   const dropdown = $('.nav-dropdown');
   const dropdownButton = $('.drop-trigger');
   const setDropdown = (open) => {
+    const wasOpen = dropdown?.classList.contains('is-open');
     dropdown?.classList.toggle('is-open', open);
     dropdownButton?.setAttribute('aria-expanded', String(open));
+    if (open && !wasOpen) animateEntry($('#suite-menu'), [{opacity: 0, transform: 'translateY(-7px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 220});
   };
   dropdownButton?.addEventListener('click', () => setDropdown(!dropdown.classList.contains('is-open')));
   dropdown?.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setDropdown(true); });
@@ -70,7 +120,10 @@
   let opener;
   $$('[data-open-suite]').forEach(button => button.addEventListener('click', () => {
     opener = button;
-    if (dialog && !dialog.open) dialog.showModal();
+    if (dialog && !dialog.open) {
+      dialog.showModal();
+      animateEntry(dialog, [{opacity: 0, transform: 'translateY(12px) scale(.98)'}, {opacity: 1, transform: 'translateY(0) scale(1)'}]);
+    }
   }));
   $('.modal-close')?.addEventListener('click', () => dialog.close());
   dialog?.addEventListener('click', e => {
@@ -91,6 +144,7 @@
   function activateTab(tab, focus = false) {
     const data = useCases[tab.dataset.use];
     if (!data) return;
+    const changed = tab.getAttribute('aria-selected') !== 'true';
     tabs.forEach(t => { t.setAttribute('aria-selected', String(t === tab)); t.tabIndex = t === tab ? 0 : -1; });
     $('#use-content').setAttribute('aria-labelledby', tab.id);
     $('#use-title').innerHTML = data.title;
@@ -102,6 +156,10 @@
     const a = $('#use-link');
     a.href = data.href;
     a.firstChild.textContent = data.link;
+    if (changed) {
+      animateEntry($('.use-image'), [{opacity: .35}, {opacity: 1}], {duration: 340});
+      animateEntry($('.use-copy'), [{opacity: 0, transform: 'translateY(10px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 360});
+    }
     if (focus) tab.focus();
   }
   tabs.forEach((tab, i) => {
@@ -222,7 +280,7 @@
 (() => {
   const frame = document.getElementById('sound-studio');
   if (frame) {
-    const studioDocument = 'app.html?v=20261018-video-suite';
+    const studioDocument = 'app.html?v=20261018-logo-motion';
     const routes = new Set(['audiogram','extract','duck','home','separate','noise','eq','master','mp3','tags','audio','ivoox','qr','library','batch','share','instructions']);
     const route = () => routes.has(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
     frame.src = studioDocument + '#' + route();
