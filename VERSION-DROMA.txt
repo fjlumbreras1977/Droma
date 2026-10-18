@@ -1,13 +1,3 @@
-DRÖMA · 2026.10.18-video
-
-Tres editores: Audio Studio Editor, Photo Editor y Video Editor.
-Video Editor: https://fjlumbreras1977.github.io/VIDEO-EDITOR/
-Página nueva: video-editor/
-Guía nueva: guias/tu-primer-video/
-
-Incluye:
-- Mezclador automático de voz y música (ducking).
-- Extractor de audio de vídeos locales.
-- Creador de audiogramas con fotografía, logo, onda animada y subtítulos manuales o SRT/VTT.
-
-Doce herramientas en el estudio. Estética negra y verde.
+DRÖMA · 2026.10.18-logo-motion
+Tres editores: audio, fotografía y vídeo. Doce herramientas de sonido.
+Logos enlazados al index.html de Dröma. Animaciones revisadas.
