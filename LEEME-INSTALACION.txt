@@ -1,6 +1,6 @@
 DRÖMA · WEB LISTA PARA TU HOSTING
 
-VERSIÓN 18.10.2026 · REVISIÓN 2
+VERSIÓN 18.10.2026 · AUDIO, IMAGEN Y VÍDEO
 
 ESTE ZIP CONTIENE LA WEB LISTA PARA EXTRAER EN SU CARPETA DE DESTINO.
 index.html está en la raíz del ZIP, junto a assets y estudio-sonido.
@@ -16,6 +16,8 @@ INSTALACIÓN O ACTUALIZACIÓN
    Si tu hosting dispone de una caché de páginas o CDN, vacíala también.
 5. En Sonido > Todas las herramientas deben aparecer doce herramientas.
    Busca Mezclador de voz y música, Extraer audio de vídeo y Audiogramas.
+6. En La suite deben aparecer Audio Studio Editor, Photo Editor y Video Editor.
+   Video Editor abre https://fjlumbreras1977.github.io/VIDEO-EDITOR/.
 
 ACCESOS PARA COMPROBAR LAS NOVEDADES
 Desde la dirección donde has instalado Dröma:
@@ -24,7 +26,7 @@ Desde la dirección donde has instalado Dröma:
 - estudio-sonido/#audiogram  Creador de audiogramas
 
 Puedes abrir VERSION-DROMA.txt en esa misma dirección para comprobar
-que el servidor está mostrando esta entrega: 2026.10.18-r2.
+que el servidor está mostrando esta entrega: 2026.10.18-video.
 
 QUÉ NECESITA
 Un hosting que sirva archivos HTML, CSS, JavaScript e imágenes y que
@@ -33,13 +35,26 @@ Node.js, base de datos, Python ni instalaciones para funcionar.
 Conserva todos los nombres y la estructura de carpetas.
 
 QUÉ INCLUYE
-Veintisiete páginas, página 404, logo, fuentes e imágenes locales, animaciones,
+Veintinueve páginas, página 404, logo, fuentes e imágenes locales, animaciones,
 selector de herramienta, demo sonora, buscador de ayuda y guías prácticas.
 Los enlaces internos y recursos funcionan en la raíz o en una subcarpeta.
-Los dos editores se abren en sus direcciones originales de GitHub Pages.
+Los tres editores se abren en sus direcciones originales de GitHub Pages.
 Este paquete incluye la web y el estudio integrado con las doce herramientas
-de sonido, proyectos, lotes y tarjetas. Los editores multipista y fotográfico
+de sonido, proyectos, lotes y tarjetas. Los editores de audio, fotografía y vídeo
 siguen abriéndose en sus enlaces externos.
+
+VIDEO EDITOR · TERCER EDITOR DE LA SUITE
+La portada, La suite, el selector de herramientas y el pie incluyen Video Editor.
+Página de presentación: video-editor/.
+Guía de inicio: guias/tu-primer-video/.
+El botón Abrir Video Editor enlaza con:
+https://fjlumbreras1977.github.io/VIDEO-EDITOR/
+Respeta las mayúsculas de VIDEO-EDITOR. El editor abre en una pestaña nueva.
+El ZIP incluye la web de presentación; el editor sigue en su URL original,
+igual que Audio Studio Editor y Photo Editor. No necesitas copiar su código.
+La suite presenta audio, fotografía y vídeo con tres editores y doce
+herramientas de sonido. Los proyectos se trasladan exportando e importando
+archivos; no existe sincronización automática entre editores.
 
 CONVERSIÓN DE VARIOS ARCHIVOS A MP3
 En Sonido > Convertir a MP3 puedes seleccionar o arrastrar varios audios.
