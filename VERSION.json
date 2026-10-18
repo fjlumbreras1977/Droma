@@ -1,0 +1,22 @@
+{
+  "name": "DROMA Video Editor",
+  "version": "1.0.6",
+  "build": "20261018-hosting-empty-start-library-menu-08",
+  "entry": "index.html",
+  "processing": "local-browser",
+  "ai": false,
+  "cloud_processing": false,
+  "complete_capcut_parity": false,
+  "browser_qa": "pending",
+  "branding": "Original blue VIVA mark, VIDEO EDITOR / DROMA native lettering",
+  "manual": "manual.html",
+  "startup_cover": "portada-video.jpg",
+  "startup_minimum_ms": 2500,
+  "video_audio_waveform": true,
+  "clip_modification_indicators": true,
+  "empty_startup": true,
+  "automatic_session_restore": false,
+  "explicit_session_recovery": true,
+  "library_removal_preserves_timeline": true,
+  "custom_library_context_menu": true
+}

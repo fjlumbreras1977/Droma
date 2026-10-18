@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manual de uso · DRÖMA Video Editor</title>
+<meta name="description" content="Manual de las herramientas y atajos de DRÖMA Video Editor: montaje, pistas, texto, audio, efectos, proyectos y exportación.">
+<link rel="icon" href="logo-viva-blue.png?v=1.0.6" type="image/png">
+<link rel="stylesheet" href="manual.css?v=1.0.6">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido del manual</a>
+<header class="manual-masthead">
+ <div class="manual-brand"><img class="manual-brand-screen" src="logo-video-editor.svg?v=1.0.6" width="184" height="64" alt="VIVA · VIDEO EDITOR · DRÖMA"><img class="manual-brand-print" src="logo-video-editor-light.svg?v=1.0.6" width="184" height="64" alt="" aria-hidden="true"><div><span>VIDEO EDITOR</span><strong>Manual de uso</strong></div></div>
+ <div class="manual-tools"><span class="manual-version">VERSIÓN 1.0.6</span><button id="printManual" type="button">Imprimir / Guardar PDF</button></div>
+</header>
+<div class="manual-layout">
+<aside class="manual-sidebar" aria-label="Índice del manual">
+ <label for="manualSearch">BUSCAR EN EL MANUAL</label><input id="manualSearch" type="search" placeholder="Ej.: cortar, audio, croma…" autocomplete="off">
+ <p id="searchStatus" role="status" aria-live="polite">19 capítulos</p>
+ <nav id="manualIndex" aria-label="Capítulos">
+ <a href="#primeros-pasos">01 · Tu primer montaje</a><a href="#entorno">02 · Conocer el entorno</a><a href="#proyecto">03 · Configurar el proyecto</a><a href="#importar">04 · Importar medios</a><a href="#montaje">05 · Cortar y montar</a><a href="#pistas">06 · Trabajar con pistas</a><a href="#transformar">07 · Mover, escalar y girar</a><a href="#fotogramas-clave">08 · Fotogramas clave</a><a href="#texto">09 · Texto y gráficos</a><a href="#subtitulos">10 · Subtítulos y SRT</a><a href="#efectos">11 · Color, máscaras y croma</a><a href="#transiciones">12 · Fundidos y transiciones</a><a href="#audio">13 · Editar y mezclar audio</a><a href="#velocidad">14 · Velocidad y duración</a><a href="#marcadores">15 · Marcadores y navegación</a><a href="#guardar">16 · Guardar y recuperar</a><a href="#exportar">17 · Exportar el resultado</a><a href="#atajos">18 · Atajos de teclado</a><a href="#ayuda">19 · Resolver dudas</a>
+ </nav>
+ <p class="sidebar-note">Este manual describe los controles de la versión instalada. Puedes consultarlo mientras conservas abierto tu proyecto.</p>
+</aside>
+<main id="contenido" class="manual-content">
+<div class="manual-cover"><span class="eyebrow">DE LA PRIMERA IDEA AL ÚLTIMO FOTOGRAMA</span><h1>Dale forma<br>a tu historia.</h1><p>Una guía práctica para editar vídeo, combinar capas, trabajar el sonido y llevarte tu montaje terminado.</p><div class="cover-tags"><span>Montaje multipista</span><span>Archivos locales</span><span>Atajos a mano</span></div></div>
+<p id="noResults" class="notice" hidden>No se encuentran capítulos con ese texto. Prueba otra palabra o borra la búsqueda para mostrar el manual completo.</p>
+<article>
+<section id="primeros-pasos" data-chapter>
+<p class="chapter-number">01 / EMPEZAR</p><h2>Tu primer montaje</h2>
+<p>Al abrir el editor aparece la portada centrada con la aplicación desenfocada detrás. Conserva su proporción y su tamaño original de 749 × 422 píxeles, reduciéndose únicamente para caber en pantallas más pequeñas. Se muestra al menos 2,5 segundos y desaparece cuando el editor está preparado.</p>
+<p>Al abrir o recargar el editor, la biblioteca de medios y la línea de tiempo aparecen siempre vacías. No se carga ningún ejemplo ni proyecto anterior automáticamente. Para retomar el último guardado local, elige <strong>Archivo → Recuperar sesión anterior</strong>; para abrir una copia descargada, elige <strong>Archivo → Abrir proyecto</strong>.</p>
+<p>Para aprender sin tocar tus archivos, abre <strong>Archivo → Cargar proyecto de ejemplo</strong>. El ejemplo combina fondos animados, títulos y una pista musical. Para comenzar tu propia pieza, elige <strong>Archivo → Nuevo proyecto</strong>. Si ya estás editando, el editor te da la opción de descargar el proyecto antes de sustituir la sesión.</p>
+<ol><li>Pulsa <strong>Importar medios</strong>, en la biblioteca de la izquierda, y selecciona vídeos, imágenes o audios.</li><li>Arrastra un vídeo a <strong>Vídeo principal</strong>. El signo <strong>+</strong> de su miniatura también lo añade en el cabezal, la línea vertical que marca el instante de edición.</li><li>Pulsa <kbd>Espacio</kbd> para reproducir. Vuelve a pulsarlo para detenerte.</li><li>Selecciona el clip y coloca el cabezal en el corte. Pulsa <kbd>Ctrl B</kbd> para dividirlo.</li><li>Selecciona el fragmento que sobra y pulsa <kbd>Supr</kbd>. Puedes recuperarlo con <kbd>Ctrl Z</kbd>.</li><li>Entra en <strong>Texto</strong>, añade un título y escribe su contenido en el panel derecho.</li><li>Descarga un proyecto desde <strong>Archivo</strong> para conservar el montaje editable. Pulsa <strong>Exportar</strong> para crear el vídeo final.</li></ol>
+<div class="tip"><strong>Proyecto y vídeo son archivos distintos.</strong> El proyecto <code>.droma</code> permite seguir editando y contiene los medios originales. La exportación crea un vídeo con las capas ya compuestas.</div>
+</section>
+<section id="entorno" data-chapter>
+<p class="chapter-number">02 / TU MESA DE TRABAJO</p><h2>Conocer el entorno</h2>
+<div class="workspace-map" role="img" aria-label="Biblioteca a la izquierda, visor al centro, ajustes a la derecha y línea de tiempo debajo"><div>Biblioteca<small>Medios · Audio · Texto<br>Subtítulos · Efectos · Transiciones</small></div><div>Visor<small>Composición y controles<br>de reproducción</small></div><div>Inspector<small>Ajustes del proyecto<br>o del clip seleccionado</small></div><div>Línea de tiempo<small>Pistas · Clips · Cabezal · Marcadores</small></div></div>
+<p>La <strong>biblioteca</strong> reúne los archivos y las herramientas para añadir contenido. El <strong>visor</strong> muestra la composición en el instante del cabezal. El <strong>inspector</strong> cambia según la selección: con un clip seleccionado permite editarlo; sin selección muestra los ajustes del proyecto.</p>
+<p>La <strong>línea de tiempo</strong> contiene los clips repartidos en pistas. La barra superior incluye selección, cuchilla, división, duplicado, borrado, ajuste magnético, cierre de hueco, marcadores y creación de pistas. Arrastra el separador horizontal entre visor y línea de tiempo para cambiar su altura en escritorio.</p>
+<p><strong>Archivo</strong> gestiona proyectos, ejemplos y descargas. <strong>Manual</strong>, a su lado, abre esta guía. <strong>Atajos</strong> muestra la referencia rápida del teclado.</p>
+</section>
+<section id="proyecto" data-chapter>
+<p class="chapter-number">03 / PREPARAR EL LIENZO</p><h2>Configurar el proyecto</h2>
+<p>Escribe el nombre en la parte superior. Para elegir la proporción, usa el selector del visor: <strong>16:9</strong> horizontal, <strong>9:16</strong> vertical, <strong>1:1</strong> cuadrada, <strong>4:5</strong> o <strong>4:3</strong>. Cambiar la proporción modifica el encuadre de toda la composición; revisa las posiciones de los títulos y las imágenes después.</p>
+<p>Haz clic en una zona vacía de una pista para quitar la selección. En el inspector de <strong>Proyecto</strong> podrás elegir el <strong>color de fondo</strong> y los <strong>fotogramas por segundo</strong>: 24, 25, 30, 50 o 60. La resolución final se elige al exportar.</p>
+<p>El contador usa el formato <strong>horas:minutos:segundos:fotogramas</strong>. El último número depende de los fps del proyecto; no son centésimas de segundo.</p>
+</section>
+<section id="importar" data-chapter>
+<p class="chapter-number">04 / TUS ARCHIVOS</p><h2>Importar medios</h2>
+<p>Pulsa <strong>Importar medios</strong>, usa <kbd>Ctrl I</kbd> o suelta archivos desde el ordenador sobre el editor. Puedes seleccionar varios de una vez. La búsqueda de la biblioteca filtra los medios por su nombre.</p>
+<p>Importar un archivo lo añade a la biblioteca. Para incorporarlo al montaje, arrástralo a la pista y al instante deseados, haz doble clic en su miniatura o pulsa su botón <strong>+</strong>. El doble clic y el botón + utilizan el instante actual del cabezal.</p>
+<table><thead><tr><th>Contenido</th><th>Compatibilidad</th></tr></thead><tbody><tr><td>Vídeo</td><td>Archivos como MP4, WebM, MOV o MKV, si el navegador admite sus códecs.</td></tr><tr><td>Audio</td><td>MP3, WAV, OGG, M4A, AAC o FLAC, según el navegador.</td></tr><tr><td>Imagen</td><td>Formatos que el navegador pueda abrir, como JPG, PNG o WebP. Las transparencias PNG se conservan.</td></tr><tr><td>Subtítulos</td><td>Archivos SRT con tiempos válidos y texto.</td></tr></tbody></table>
+<p>La extensión no garantiza que un archivo se reproduzca: dos MP4 pueden usar códecs diferentes. Si falla la lectura, convierte el archivo a un códec admitido antes de volver a importarlo.</p>
+<p>Haz clic con el <strong>botón derecho</strong> sobre una miniatura y elige <strong>Eliminar clip</strong>, o utiliza su botón <strong>×</strong>, para retirarla de la biblioteca. Los clips ya colocados en la línea de tiempo conservan su imagen, audio, forma de onda y ajustes. El archivo necesario para esos clips se conserva dentro del proyecto y de su copia <code>.droma</code>. No se borra el original del ordenador. Para añadir otra copia desde la biblioteca, vuelve a importar el archivo. El menú del navegador se desactiva dentro del editor; en la biblioteca se utiliza este menú propio. Con la miniatura enfocada, <kbd>Mayús F10</kbd> abre las mismas opciones y <kbd>Esc</kbd> las cierra.</p>
+</section>
+<section id="montaje" data-chapter>
+<p class="chapter-number">05 / DAR RITMO</p><h2>Cortar y montar</h2>
+<h3>Seleccionar y mover</h3><p>Haz clic en un clip para seleccionarlo. Usa <kbd>Mayús + clic</kbd> para añadir o quitar clips de una selección múltiple. <kbd>Ctrl A</kbd> selecciona todos los clips. Arrastra el cuerpo de un clip para cambiar su inicio; una selección múltiple se mueve conservando su separación temporal. Un clip individual también puede trasladarse a otra pista compatible.</p>
+<h3>Dividir</h3><p>Con el clip seleccionado, sitúa el cabezal en su interior y pulsa <kbd>Ctrl B</kbd>, o utiliza el botón <strong>Dividir</strong>. <kbd>Ctrl Mayús B</kbd> divide los clips de todas las pistas que atraviesa el cabezal, excepto los de pistas bloqueadas. La herramienta <strong>Cuchilla</strong>, tecla <kbd>B</kbd>, corta en el punto donde hagas clic sobre un clip. Vuelve a selección con <kbd>A</kbd>.</p>
+<h3>Recortar</h3><p>Arrastra el borde izquierdo o derecho. El recorte conserva el medio original; puedes extender de nuevo el borde mientras quede contenido de origen. Con el cabezal dentro del clip seleccionado, <kbd>Q</kbd> elimina su parte izquierda y <kbd>W</kbd> su parte derecha. También están disponibles los botones <strong>Recortar inicio</strong> y <strong>Recortar fin</strong> del inspector.</p>
+<h3>Copiar, pegar y borrar</h3><p>Usa <kbd>Ctrl C</kbd>, <kbd>Ctrl X</kbd> y <kbd>Ctrl V</kbd>. Pegar sitúa la selección copiada a partir del cabezal, manteniendo sus separaciones y sus pistas si siguen disponibles y desbloqueadas. <kbd>Ctrl D</kbd> coloca un duplicado a continuación de la selección. <kbd>Supr</kbd> o <kbd>Retroceso</kbd> borran los clips seleccionados.</p>
+<p>Con <strong>Borrado con cierre de hueco</strong> activado, borrar desplaza hacia atrás los clips posteriores de las pistas afectadas. Comprueba la sincronía con las otras pistas después de usarlo. <kbd>Ctrl Z</kbd> deshace y <kbd>Ctrl Mayús Z</kbd> rehace.</p>
+<div class="tip">Si no puedes cortar, verifica que el cabezal está dentro del clip, que el clip está seleccionado y que la pista no está bloqueada. Un corte en el borde no crea otro fragmento.</div>
+<h3>Identificar las modificaciones de un clip</h3>
+<p>Los clips con ajustes aplicados muestran una línea violeta en su borde superior y pequeños indicadores bajo el nombre. Al pasar el ratón por un indicador verás los ajustes activos; al pulsarlo, se selecciona ese clip y se localiza su control en el inspector. Las marcas se recalculan al editar, deshacer, dividir o abrir un proyecto.</p>
+<table><thead><tr><th>Indicador</th><th>Qué identifica</th></tr></thead><tbody>
+<tr><td><kbd>FX</kbd></td><td>Filtro o desenfoque.</td></tr><tr><td><kbd>AN</kbd></td><td>Animación de entrada o salida y fundidos visuales.</td></tr><tr><td><kbd>◇ 2</kbd></td><td>Fotogramas clave; la cifra indica cuántos contiene el clip.</td></tr><tr><td><kbd>COL</kbd></td><td>Ajustes de brillo, contraste, saturación, tono o temperatura.</td></tr><tr><td><kbd>CR</kbd> · <kbd>MSK</kbd> · <kbd>RC</kbd></td><td>Croma, máscara o recorte rectangular de la imagen.</td></tr><tr><td><kbd>TR</kbd></td><td>Posición, escala, giro, volteo o encuadre de relleno.</td></tr><tr><td><kbd>50%</kbd> · <kbd>BL</kbd></td><td>Opacidad distinta del 100 % o un modo de fusión.</td></tr><tr><td><kbd>2×</kbd></td><td>Velocidad distinta de la normal.</td></tr><tr><td><kbd>AU</kbd></td><td>Volumen, balance, efecto de audio, fundido sonoro o silencio del clip o su pista.</td></tr><tr><td><kbd>CUT</kbd></td><td>El clip utiliza un fragmento del archivo de origen, por división o recorte.</td></tr><tr><td><kbd>TXT</kbd></td><td>Sombra, contorno, fondo o cursiva de un texto.</td></tr><tr><td><kbd>OFF</kbd></td><td>Clip desactivado o pista visual oculta.</td></tr>
+</tbody></table>
+<p>Cuando no caben todos los indicadores aparece <strong>+N</strong>. Púlsalo para consultar la lista completa y abrir el ajuste que elijas. En clips muy cortos o con poco zoom se utiliza una marca compacta con un contador o un punto; la descripción completa también está en el aviso del clip. La banda de la forma de onda permanece separada de estos indicadores.</p>
+</section>
+<section id="pistas" data-chapter>
+<p class="chapter-number">06 / COMPONER POR CAPAS</p><h2>Trabajar con pistas</h2>
+<p>El proyecto empieza con pistas para texto, superposición, vídeo principal y dos pistas de audio. El botón <strong>Añadir pista</strong> permite crear más pistas visuales o de audio, con el nombre que elijas. Haz doble clic sobre el nombre de una pista para renombrarla.</p>
+<p>Las pistas visuales superiores se dibujan por encima de las inferiores. Coloca una imagen, un vídeo o un título en una pista superior para superponerlo sobre el fondo. Los huecos sin contenido dejan ver el color de fondo del proyecto.</p>
+<p>El <strong>candado</strong> evita editar los clips de la pista. El <strong>ojo</strong> oculta una pista visual en la composición; en esa pista también se detiene su reproducción de medios. En las pistas de audio, el <strong>altavoz</strong> silencia su sonido. Estas opciones afectan al resultado exportado; revisa su estado antes de exportar.</p>
+</section>
+<section id="transformar" data-chapter>
+<p class="chapter-number">07 / ENCUADRAR</p><h2>Mover, escalar y girar</h2>
+<p>Selecciona una capa visible en el visor o su clip en la línea de tiempo y detén la reproducción. Arrastra su interior para moverla, sus <strong>esquinas</strong> para escalarla o el <strong>manejador superior</strong> para girarla. También puedes mantener <kbd>Mayús</kbd> al arrastrar para escalar, o <kbd>Alt</kbd> para girar. Durante un giro, Mayús ajusta el ángulo a pasos de 15 grados.</p>
+<p>En <strong>Básico → Transformación</strong>, introduce valores de escala, posición X/Y, rotación y opacidad. El centro de la composición es <strong>X = 0, Y = 0</strong>. El botón <strong>Centrar</strong> devuelve la capa al centro. <strong>Voltear horizontal</strong> crea un reflejo.</p>
+<p>Para imágenes y vídeos, <strong>Ajustar</strong> muestra el contenido completo y puede dejar bandas; <strong>Rellenar</strong> llena el encuadre y puede recortar parte del contenido. Con el imán activo, aparecen guías al acercar la capa al centro horizontal o vertical.</p>
+<p>El botón de restablecimiento del inspector devuelve los ajustes del clip a sus valores iniciales y borra sus fotogramas clave. No lo uses si solo quieres centrar la capa.</p>
+</section>
+<section id="fotogramas-clave" data-chapter>
+<p class="chapter-number">08 / CREAR MOVIMIENTO</p><h2>Fotogramas clave</h2>
+<p>Los fotogramas clave guardan valores de <strong>posición, escala, giro y opacidad</strong> en instantes concretos. Entre esos puntos, el editor interpola la transformación.</p>
+<ol><li>Selecciona el clip y coloca el cabezal en el instante inicial de la animación, dentro del clip.</li><li>Ajusta la transformación y pulsa el símbolo <strong>◇</strong> del inspector para registrar una clave.</li><li>Mueve el cabezal a un instante posterior.</li><li>Cambia la posición, escala, rotación u opacidad. Cuando el clip ya tiene claves, estos cambios crean o actualizan una clave en el instante del cabezal.</li><li>Reproduce el fragmento para revisar el movimiento.</li></ol>
+<p>Las claves se representan con pequeños rombos en el clip. Pulsar ◇ de nuevo sobre una clave existente la elimina. <strong>Borrar claves</strong> elimina la animación y conserva como transformación fija la que hay en el cabezal. Esta versión interpola esas propiedades; no ofrece un editor de curvas de aceleración.</p>
+</section>
+<section id="texto" data-chapter>
+<p class="chapter-number">09 / TITULAR Y DESTACAR</p><h2>Texto y gráficos</h2>
+<p>Abre <strong>Texto</strong> y elige un título, un subtítulo o un título animado. El nuevo clip se coloca en el cabezal. Selecciónalo y escribe en <strong>Contenido</strong>, dentro de <strong>Básico</strong>. <kbd>Intro</kbd> crea otra línea. El doble clic sobre un clip de texto abre su edición en el inspector.</p>
+<p>Puedes cambiar tipografía, tamaño, alineación, color, negrita, cursiva, sombra y contorno. Para un rótulo con caja, desactiva <strong>Fondo transparente</strong> y elige su color de fondo. Las fuentes disponibles utilizan las tipografías instaladas en el equipo; una fuente ausente puede mostrarse con una sustituta del navegador.</p>
+<p>En esta misma biblioteca puedes añadir un <strong>rectángulo</strong> o un <strong>círculo</strong>. Sus controles permiten cambiar color, anchura, altura y transformación. Ajusta inicio y duración desde la línea de tiempo o el apartado <strong>Tiempo</strong>.</p>
+</section>
+<section id="subtitulos" data-chapter>
+<p class="chapter-number">10 / CADA PALABRA EN SU SITIO</p><h2>Subtítulos y SRT</h2>
+<p>En <strong>Subtítulos</strong>, pulsa <strong>Añadir subtítulo manual</strong> para escribir una frase, o <strong>Importar archivo SRT</strong> para incorporar un archivo con sus tiempos. Los SRT también pueden arrastrarse al editor.</p>
+<p>Cada entrada del SRT se convierte en un clip de texto. Puedes moverlo, recortarlo, dividirlo y cambiar su estilo igual que cualquier título. El editor admite tiempos con coma o punto para los milisegundos y subtítulos con varias líneas.</p>
+<p><strong>Exportar textos como SRT</strong> incluye <strong>todos los clips de texto</strong> del proyecto, también los títulos, ordenados por su inicio. SRT guarda texto y tiempos; no conserva la tipografía, los colores ni la animación. En la exportación del vídeo, los textos visibles quedan integrados en la imagen.</p>
+</section>
+<section id="efectos" data-chapter>
+<p class="chapter-number">11 / LA IMAGEN</p><h2>Color, máscaras y croma</h2>
+<p>Selecciona un clip visual y abre <strong>Efectos</strong> para aplicar un estilo: Original, Cine, Cálido, Blanco y negro, Vintage, Frío, Vibrante o Suave. <strong>Original</strong> retira ese estilo. En el inspector, <strong>Ajustes</strong> permite modificar brillo, contraste, saturación, tono, temperatura cálida y desenfoque.</p>
+<p><strong>Fusión</strong> cambia cómo se combina la capa con las inferiores: Normal, Trama, Multiplicar, Superponer, Aclarar u Oscurecer. El resultado depende de los colores y de las capas que queden debajo.</p>
+<h3>Máscara y recorte</h3><p>En imágenes y vídeos puedes elegir una máscara circular o un rectángulo redondeado. Sin máscara, los deslizadores de recorte ocultan porcentajes de los lados izquierdo, derecho, superior e inferior. En esta versión, las máscaras circular y redondeada sustituyen al recorte rectangular; no se acumulan con esos cuatro deslizadores.</p>
+<h3>Eliminar un color</h3><p>Activa <strong>Croma → Eliminar color</strong> y elige el color del fondo. Aumenta <strong>Tolerancia</strong> para eliminar más colores parecidos y ajusta <strong>Suavidad</strong> para suavizar la transición en los bordes. Coloca otra imagen o vídeo en una pista inferior para verlo a través de la transparencia. Es un efecto de eliminación de color, no un recorte automático de personas.</p>
+<p>El croma y el desenfoque elevan la carga de procesamiento. Para comprobarlos, prueba primero un fragmento corto a una resolución de exportación moderada.</p>
+</section>
+<section id="transiciones" data-chapter>
+<p class="chapter-number">12 / UNIR PLANOS</p><h2>Fundidos y transiciones</h2>
+<p>En <strong>Transiciones</strong>, selecciona un clip y aplica Fundido, Deslizar arriba, Deslizar lateral, Acercamiento o Barrido. Elige <strong>Sin animación</strong> para retirar esa entrada y salida. La pestaña <strong>Animación</strong> del inspector permite ajustar sus duraciones.</p>
+<p>Para crear un encadenado, selecciona el segundo clip y pulsa <strong>Crear encadenado con el clip anterior</strong>. El editor solapa ese clip con el final de uno anterior, lo coloca en una pista superior compatible y aplica un fundido de entrada. Si necesita una pista visual adicional, la crea.</p>
+<p>También puedes montar el encadenado manualmente: mantén el primer plano debajo, superpón el inicio del segundo en una pista superior y añade un fundido al segundo. Revisa la zona de solapamiento para evitar huecos o fundidos no deseados al color de fondo.</p>
+</section>
+<section id="audio" data-chapter>
+<p class="chapter-number">13 / EL SONIDO</p><h2>Editar y mezclar audio</h2>
+<h3>Ver el audio del vídeo en la línea de tiempo</h3><p>Al colocar un vídeo en una pista, el clip muestra su imagen en la zona superior y la <strong>forma de onda de su sonido</strong> en una banda inferior. No necesitas separar el audio para verla. Mientras se prepara aparecerá «Analizando audio…» o «Audio en espera…»; el análisis se realiza localmente y se reutiliza en todos los fragmentos del mismo archivo.</p><p>La forma de onda sigue el tramo de origen de cada clip: se actualiza al recortar, dividir, duplicar, hacer zoom o cambiar la velocidad. Se calculan picos de todos los canales, también cuando el primer canal está en silencio. Es una referencia del audio original, anterior a los efectos y al volumen del clip. Al silenciar el clip o su pista, se atenúa visualmente, pero la forma original sigue visible.</p><p>Un silencio real se muestra sin picos. Si el archivo no tiene una pista de audio decodificable o el navegador no puede analizar su códec, aparece «Audio no analizable», con un botón para reintentar. La visualización no añade sonido ni altera el archivo original. El análisis de archivos grandes puede tardar y depende de la memoria disponible en el navegador.</p>
+<p>Importa música o locución y arrástrala a una pista de audio. Selecciona el clip para ver <strong>Volumen</strong>, <strong>Balance</strong>, fundidos de entrada y salida, procesamiento y silencio del clip. El volumen va del 0 % al 200 %; sumar pistas o superar el 100 % puede producir saturación, por lo que conviene reducir niveles si el sonido distorsiona.</p>
+<p><strong>Balance</strong> desplaza el sonido hacia la izquierda o la derecha. Los fundidos de audio tienen sus propios tiempos: un fundido visual no sustituye al de sonido.</p>
+<p>El procesamiento ofrece <strong>Teléfono</strong>, <strong>Presencia de voz</strong> y <strong>Compresor</strong>. Selecciona <strong>Sin efecto</strong> para retirar el procesamiento. Estos controles modifican el sonido; no son una transcripción ni una restauración mediante IA.</p>
+<p>Para independizar el audio de un vídeo, selecciona su clip, abre <strong>Audio</strong> y pulsa <strong>Separar audio del vídeo</strong>. Se crea un clip de audio en una pista de audio desbloqueada y se silencia el sonido del clip de vídeo original, para que no se reproduzca dos veces.</p>
+<div class="tip"><strong>Escucha y exportación.</strong> El altavoz situado junto al visor silencia únicamente tu escucha. Para excluir un sonido de la exportación, silencia su clip o su pista de audio.</div>
+</section>
+<section id="velocidad" data-chapter>
+<p class="chapter-number">14 / EL TIEMPO DEL CLIP</p><h2>Velocidad y duración</h2>
+<p>En <strong>Tiempo</strong> puedes introducir el inicio y la duración del clip en segundos. En vídeos y audios, <strong>Velocidad</strong> ofrece 0,25×, 0,5×, 0,75×, 1×, 1,25×, 1,5×, 2×, 3× o 4×.</p>
+<p>Al cambiar la velocidad, cambia la duración necesaria para reproducir el mismo tramo del archivo. Los clips posteriores no se recolocan automáticamente: comprueba si aparecen huecos o solapamientos. La reproducción solicita al navegador conservar el tono del audio; el resultado depende de su implementación.</p>
+<p>Esta versión utiliza velocidad constante por clip. Las curvas de velocidad y la reproducción inversa con audio no están incluidas.</p>
+</section>
+<section id="marcadores" data-chapter>
+<p class="chapter-number">15 / ORIENTARTE</p><h2>Marcadores y navegación</h2>
+<p>Haz clic o arrastra sobre la regla para mover el cabezal. Las flechas <kbd>←</kbd> y <kbd>→</kbd> avanzan un fotograma; con Mayús, un segundo. <kbd>↑</kbd> y <kbd>↓</kbd> saltan al corte anterior y siguiente. <kbd>Inicio</kbd> y <kbd>Fin</kbd> van a los extremos del proyecto.</p>
+<p>Pulsa <kbd>M</kbd> o el botón de la bandera para añadir un marcador en el cabezal. Haz clic en su bandera para saltar a él y doble clic para borrarlo. Los marcadores se conservan dentro del proyecto.</p>
+<p><strong>Ajuste magnético</strong>, tecla <kbd>N</kbd>, ayuda a alinear clips con otros bordes, el cabezal y los marcadores. Ajusta el zoom con el deslizador, <kbd>Ctrl +</kbd>, <kbd>Ctrl −</kbd> o Ctrl y rueda. <kbd>Mayús Z</kbd> encaja el proyecto en el ancho de la línea de tiempo. Con Alt y rueda puedes desplazarte horizontalmente.</p>
+</section>
+<section id="guardar" data-chapter>
+<p class="chapter-number">16 / CONTINUAR OTRO DÍA</p><h2>Guardar y recuperar</h2>
+<p>El editor guarda automáticamente la sesión en el almacenamiento local del navegador. El indicador superior informa del estado. Esa sesión pertenece a ese <strong>equipo, navegador y dominio</strong>; no es una cuenta ni una copia en un servidor. Cada apertura comienza vacía: utiliza <strong>Archivo → Recuperar sesión anterior</strong> para cargarla expresamente. Abrir el editor vacío no sobrescribe la sesión anterior. Al comenzar a editar, el guardado automático conserva el nuevo trabajo; descarga antes una copia del anterior si necesitas guardar ambos.</p>
+<p>Usa <strong>Archivo → Descargar proyecto</strong> o <kbd>Ctrl S</kbd> para obtener un archivo <code>.droma</code> con el montaje, los archivos de la biblioteca y los medios que usan sus clips, aunque los hayas retirado de la biblioteca. Puede ser grande si has importado vídeos extensos.</p>
+<p>Para recuperarlo, elige <strong>Archivo → Abrir proyecto</strong> o <kbd>Ctrl O</kbd>. El editor comprueba el archivo y te permite descargar la sesión actual antes de sustituirla. El historial de deshacer pertenece a la sesión abierta y se reinicia al abrir otro proyecto.</p>
+<div class="tip">Conserva una copia .droma antes de limpiar los datos del navegador o cambiar de equipo o dominio. Si el guardado automático falla por falta de espacio, descarga el proyecto mientras sigue abierto.</div>
+</section>
+<section id="exportar" data-chapter>
+<p class="chapter-number">17 / EL RESULTADO FINAL</p><h2>Exportar el resultado</h2>
+<p>Pulsa <strong>Exportar</strong> o <kbd>Ctrl E</kbd>. Elige nombre, formato disponible, resolución, fps y calidad. Se ofrecen 720p, 1080p y 2160p; las dimensiones se adaptan a la proporción del proyecto. Se exporta el proyecto completo hasta el final del último clip.</p>
+<p>La exportación compone las capas visibles, texto, efectos y audio de las pistas activas. El archivo no lleva una marca de agua añadida por el editor. <strong>MP4</strong> solo aparece cuando el navegador informa de que puede codificarlo; <strong>WebM</strong> se ofrece cuando está disponible. Cambiar la extensión de un WebM no lo convierte en MP4.</p>
+<p>La exportación web se realiza <strong>en tiempo real</strong>. Mantén la pestaña visible hasta que finalice. Si queda oculta, el proceso se detiene para evitar guardar un resultado incompleto. Al acabar, se inicia la descarga y aparece la opción de descargar de nuevo. La fluidez y los códecs disponibles dependen del navegador y del equipo.</p>
+<p>Para llevarte una imagen fija, sitúa el cabezal y utiliza la cámara del visor o <strong>Archivo → Guardar fotograma PNG</strong>. La captura corresponde al tamaño interno del visor, no a la resolución elegida para exportar vídeo. Los marcos de selección y las guías de edición no se incluyen en el PNG.</p>
+</section>
+<section id="atajos" data-chapter>
+<p class="chapter-number">18 / A MANO</p><h2>Atajos de teclado</h2>
+<p>En Mac, sustituye <strong>Ctrl</strong> por <strong>⌘</strong>. Los atajos del montaje no actúan mientras escribes en un campo ni mientras está abierto el manual o un diálogo. Algunos sistemas o navegadores pueden reservar combinaciones.</p>
+<table class="shortcut-table"><thead><tr><th>Acción</th><th>Teclas</th></tr></thead><tbody>
+<tr><td>Abrir el manual</td><td><kbd>F1</kbd></td></tr><tr><td>Referencia rápida de atajos</td><td><kbd>?</kbd></td></tr><tr><td>Reproducir / pausar</td><td><kbd>Espacio</kbd></td></tr><tr><td>Seleccionar / cuchilla</td><td><kbd>A</kbd> / <kbd>B</kbd></td></tr><tr><td>Dividir selección</td><td><kbd>Ctrl B</kbd></td></tr><tr><td>Dividir todas las pistas</td><td><kbd>Ctrl Mayús B</kbd></td></tr><tr><td>Recortar inicio / final al cabezal</td><td><kbd>Q</kbd> / <kbd>W</kbd></td></tr><tr><td>Deshacer / rehacer</td><td><kbd>Ctrl Z</kbd> / <kbd>Ctrl Mayús Z</kbd> (también <kbd>Ctrl Y</kbd>)</td></tr><tr><td>Copiar / cortar / pegar</td><td><kbd>Ctrl C</kbd> / <kbd>Ctrl X</kbd> / <kbd>Ctrl V</kbd></td></tr><tr><td>Duplicar selección</td><td><kbd>Ctrl D</kbd></td></tr><tr><td>Borrar selección</td><td><kbd>Supr</kbd> o <kbd>Retroceso</kbd></td></tr><tr><td>Seleccionar todos los clips</td><td><kbd>Ctrl A</kbd></td></tr><tr><td>Selección múltiple</td><td><kbd>Mayús + clic</kbd></td></tr><tr><td>Importar / abrir proyecto</td><td><kbd>Ctrl I</kbd> / <kbd>Ctrl O</kbd></td></tr><tr><td>Descargar proyecto / exportar vídeo</td><td><kbd>Ctrl S</kbd> / <kbd>Ctrl E</kbd></td></tr><tr><td>Fotograma anterior / siguiente</td><td><kbd>←</kbd> / <kbd>→</kbd></td></tr><tr><td>Un segundo atrás / adelante</td><td><kbd>Mayús ←</kbd> / <kbd>Mayús →</kbd></td></tr><tr><td>Corte anterior / siguiente</td><td><kbd>↑</kbd> / <kbd>↓</kbd></td></tr><tr><td>Inicio / final del proyecto</td><td><kbd>Inicio</kbd> / <kbd>Fin</kbd></td></tr><tr><td>Ajuste magnético / añadir marcador</td><td><kbd>N</kbd> / <kbd>M</kbd></td></tr><tr><td>Acercar / alejar línea de tiempo</td><td><kbd>Ctrl +</kbd> / <kbd>Ctrl −</kbd></td></tr><tr><td>Encajar el proyecto en la línea de tiempo</td><td><kbd>Mayús Z</kbd></td></tr><tr><td>Cerrar manual o diálogo</td><td><kbd>Esc</kbd></td></tr>
+</tbody></table>
+</section>
+<section id="ayuda" data-chapter>
+<p class="chapter-number">19 / SI ALGO NO ENCAJA</p><h2>Resolver dudas</h2>
+<dl><dt>No aparece un archivo importado en el montaje</dt><dd>Importarlo lo incorpora a la biblioteca. Arrástralo a una pista, haz doble clic en su miniatura o pulsa su botón +.</dd><dt>Un clip está negro o no se ve</dt><dd>Comprueba que el cabezal está dentro de su duración, que su pista no está oculta y que no hay otra capa tapándolo. Revisa también escala, opacidad, recorte y compatibilidad del códec.</dd><dt>No puedo mover o cortar un clip</dt><dd>Revisa la selección y el candado de su pista. Para un corte, el cabezal tiene que estar dentro del clip y separado de sus bordes.</dd><dt>No oigo el audio o se oye doble</dt><dd>Inicia la reproducción con un clic o con Espacio. Revisa los silencios del visor, de la pista y del clip, su volumen y sus tiempos. Después de separar audio, comprueba que no has reactivado también el sonido del vídeo original.</dd><dt>No aparece MP4 o la exportación va a saltos</dt><dd>El formato depende del codificador del navegador. Prueba un navegador compatible y actualizado. Reduce resolución o calidad y evita otras tareas exigentes mientras exportas.</dd><dt>El guardado automático no termina</dt><dd>Puede faltar espacio de almacenamiento local o estar restringido por el navegador. Descarga un proyecto .droma para conservar los medios y el montaje.</dd><dt>Después de actualizar el hosting sigo viendo la versión anterior</dt><dd>Reemplaza todos los archivos del ZIP, incluidos los del manual y el logo. Recarga con Ctrl+F5 y comprueba la versión en <code>VERSION.json</code>.</dd></dl>
+<div class="scope-note"><strong>Alcance actual.</strong> Esta guía documenta las funciones integradas en la versión 1.0.6. Las curvas de velocidad, la reproducción inversa con audio, las transiciones avanzadas, las máscaras con trazado, LUT 3D y estabilización siguen pendientes. El editor no incluye IA ni servicios de procesamiento en la nube. El botón <strong>Estado de funciones</strong> permite consultar ese alcance desde el montaje.</div>
+</section>
+</article>
+<footer class="manual-footer"><span>DRÖMA VIDEO EDITOR · MANUAL 1.0.6</span><a href="#contenido">Volver al principio ↑</a></footer>
+</main>
+</div>
+<script src="manual.js?v=1.0.6" defer></script>
+</body>
+</html>

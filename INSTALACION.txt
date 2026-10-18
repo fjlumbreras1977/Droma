@@ -1,0 +1,139 @@
+DRÖMA VIDEO EDITOR — VERSIÓN 1.0.6
+18 de octubre de 2026
+
+INSTALAR EN TU HOSTING
+
+1. Crea una carpeta en la web, por ejemplo public_html/video/.
+2. Extrae el ZIP y sube TODO su contenido a esa carpeta.
+   index.html debe quedar directamente dentro de /video/.
+3. Abre https://tudominio.es/video/.
+4. Si estás sustituyendo archivos anteriores, reemplázalos todos y recarga
+   con Ctrl+F5. No mezcles archivos de versiones distintas.
+
+No necesita WordPress, PHP, MySQL, Node, una instalación de paquetes ni claves
+API. Puede alojarse junto a WordPress en una carpeta independiente. Evita
+crear una página WordPress y pegar dentro el código del editor.
+El servidor debe entregar .js como application/javascript o text/javascript
+y .css como text/css. Los hosting habituales ya lo hacen.
+Utiliza HTTPS y un navegador actual con Canvas, Web Audio y MediaRecorder.
+
+DATOS Y MEDIOS
+
+El hosting sirve los archivos del editor. Los vídeos, fotos y audios importados
+no se envían al hosting. Se procesan en el navegador del usuario.
+La sesión se guarda en IndexedDB de ese navegador, equipo y dominio.
+Cada apertura del editor comienza con biblioteca y línea de tiempo vacías.
+Archivo > Recuperar sesión anterior permite cargar el último guardado local.
+Abrir el editor vacío no sobrescribe ese guardado; editar empieza una nueva
+sesión guardada. Descarga el proyecto anterior si necesitas conservar ambos.
+El navegador puede borrar datos locales por falta de espacio o al limpiar su
+almacenamiento. Descarga el proyecto .droma para conservar una copia portable:
+incluye el montaje y los medios originales, sin convertirlos a otro formato.
+Un cambio de dominio o de navegador no traslada la sesión automáticamente.
+Abre el proyecto .droma en el nuevo equipo o dominio para continuar.
+
+USO BÁSICO
+
+Importa tus archivos. Arrástralos desde la biblioteca a una pista o pulsa +.
+Haz clic en un clip y ajústalo en el inspector derecho.
+Arrastra el clip para moverlo; sus bordes para recortarlo.
+En el visor, arrastra para mover la capa. Las esquinas escalan y el manejador
+superior gira. Mayús+arrastrar escala, Alt+arrastrar gira.
+Usa Archivo para guardar o abrir proyectos y descargar fotogramas PNG.
+El botón Atajos incluye la guía del teclado.
+Los SRT se importan y sus subtítulos se convierten en clips de texto editables.
+
+EXPORTACIÓN
+
+Exporta la composición con vídeo y audio mezclados, texto, efectos y croma.
+Se ofrecen 720p, 1080p y 2160p, y las frecuencias de imagen del proyecto.
+El formato MP4 se ofrece únicamente si el navegador puede codificarlo.
+WebM se ofrece cuando el navegador lo soporta. No se renombra un WebM a MP4.
+La exportación web se realiza en tiempo real. Mantén la pestaña visible; si
+queda oculta, la exportación se detiene para evitar guardar un vídeo incompleto.
+La carga del procesador, la resolución, el croma y el número de capas afectan
+a la fluidez. No hay un límite de duración impuesto por la aplicación, pero
+se aplican los límites de memoria, almacenamiento y códecs del navegador.
+La compatibilidad de importación depende del códec, no solo de la extensión.
+Por ejemplo, un MOV o un MKV puede no poder abrirse en un navegador concreto.
+No incluye música, plantillas ni recursos comerciales de terceros.
+
+ESTADO DE LA ENTREGA
+
+Esta es una primera versión funcional del editor convencional, sin IA ni
+servicios de procesamiento en la nube. No tiene todavía la equivalencia
+completa con CapCut. En Estado de funciones se muestra lo integrado y lo
+pendiente: curvas de velocidad, reproducción inversa con audio, transiciones
+avanzadas, máscaras con trazado, LUT 3D y estabilización, entre otras funciones
+que requieren más desarrollo para cubrir ese alcance completo.
+
+Se han comprobado la sintaxis JavaScript y las operaciones del núcleo mediante
+pruebas automatizadas de división, recorte, offsets, fotogramas clave, SRT,
+validación y conservación binaria de los archivos dentro de proyectos .droma.
+La interacción de la interfaz y el render con archivos reales no han podido
+verificarse en un navegador en esta sesión. Compruébalos antes de ofrecer el
+editor como una herramienta de producción.
+
+CAMBIOS DE LA VERSIÓN 1.0.1
+
+Se incorpora el logo original Dröma facilitado por el usuario en cabecera,
+favicon y tarjetas de filtros. Se retira el símbolo provisional de la d verde.
+El archivo logo-droma.png conserva exactamente los bytes del PNG original.
+En la cabecera y las tarjetas se muestra en blanco mediante CSS para que
+resulte visible en la interfaz oscura. No se modifica el archivo original.
+
+CAMBIOS DE LA VERSIÓN 1.0.2
+
+Se añade Manual junto a Archivo. El manual contiene 19 capítulos, búsqueda,
+índice y tabla de atajos. Se abre dentro del editor, con opción de abrirlo
+en otra pestaña e imprimirlo o guardarlo como PDF desde el navegador.
+Se incluye en manual.html, manual.css y manual.js. Sube también estos archivos.
+F1 abre el manual y Esc lo cierra. Los atajos de montaje se suspenden al leerlo.
+
+CAMBIOS DE LA VERSIÓN 1.0.3
+
+Incluye también la portada de inicio original, centrada sobre la aplicación
+desenfocada. Conserva los 749 x 422 píxeles originales y solo se reduce si
+la pantalla es más pequeña. No recorta ni estira la imagen. Se muestra un
+mínimo de 2,5 segundos y se retira cuando termina la carga inicial del editor.
+Añadidos portada-video.jpg y startup.js; deben subirse con el resto del ZIP.
+El Manual junto a Archivo se mantiene incluido en esta entrega.
+
+CAMBIOS DE LA VERSIÓN 1.0.4
+
+Nueva identidad de cabecera siguiendo la referencia aportada: símbolo azul
+VIVA original a la izquierda, VIDEO EDITOR a la derecha y DRÖMA debajo.
+El símbolo se conserva a partir de los píxeles originales de la referencia,
+sin redibujarlo ni cambiarle el color. Se actualizan cabecera, manual, favicon
+y tarjetas de filtros. El manual incluye una variante para imprimir en papel
+blanco. Sube también logo-video-editor.svg, logo-video-editor-light.svg y
+logo-viva-blue.png. Se mantienen el Manual y la portada de inicio anterior.
+
+CAMBIOS DE LA VERSIÓN 1.0.5
+
+Los clips de vídeo muestran una banda inferior con la forma de onda de su
+audio original, sin separarlo. Se mantiene alineada con el audio al cortar,
+recortar, duplicar, hacer zoom o cambiar velocidad. Se analizan los canales
+del archivo y se comparten los resultados entre todos sus clips. El análisis
+es local y en segundo plano; no tiene el anterior límite artificial de
+150 MB. Se aplican las restricciones de códecs y memoria del navegador.
+Si no puede leerse una pista de audio, se indica y puede reintentarse, sin
+dibujar una onda ficticia. Se añade waveform.js: debe subirse con el resto.
+
+CAMBIOS DE LA VERSIÓN 1.0.6
+
+Los clips con modificaciones muestran indicadores de efecto, animación,
+fotogramas clave, color, croma, máscara, recorte, transformación, opacidad,
+fusión, velocidad, audio y estilo de texto. CUT identifica un fragmento
+recortado y OFF un contenido oculto. Los indicadores incluyen descripciones
+y acceso directo al ajuste correspondiente. En clips cortos se agrupan en
+un contador o punto; +N abre la lista completa. Se actualizan desde los
+ajustes reales, también al deshacer, dividir y abrir proyectos anteriores.
+Se añade clip-modifiers.js y se actualiza el Manual. Sube todos los archivos.
+
+El botón derecho utiliza un menú propio con «Eliminar clip» en la biblioteca.
+El menú del navegador se desactiva dentro del editor y del Manual. Retirar
+un medio de la biblioteca, también con ×, conserva los clips de la línea de
+tiempo y sus fuentes originales, incluidas en el guardado local y .droma.
+El editor siempre arranca vacío. El ejemplo y la recuperación de la sesión
+anterior solo se cargan desde Archivo. Se añade media-library.js.
