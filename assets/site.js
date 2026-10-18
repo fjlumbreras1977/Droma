@@ -221,9 +221,10 @@
 (() => {
   const frame = document.getElementById('sound-studio');
   if (frame) {
-    const routes = new Set(['home','noise','eq','master','mp3','tags','audio','ivoox','qr','library','batch','share','instructions']);
+    const studioDocument = 'app.html?v=20261018-scroll';
+    const routes = new Set(['home','separate','noise','eq','master','mp3','tags','audio','ivoox','qr','library','batch','share','instructions']);
     const route = () => routes.has(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
-    frame.src = 'app.html#' + route();
+    frame.src = studioDocument + '#' + route();
     frame.addEventListener('load', () => {
       try {
         frame.contentWindow.addEventListener('hashchange', () => {
@@ -236,7 +237,7 @@
     });
     window.addEventListener('hashchange', () => {
       try { if (frame.contentWindow.location.hash !== '#' + route()) frame.contentWindow.location.hash = route(); }
-      catch (_) { frame.src = 'app.html#' + route(); }
+      catch (_) { frame.src = studioDocument + '#' + route(); }
     });
   }
   const buttons = [...document.querySelectorAll('[data-audio-filter]')];
