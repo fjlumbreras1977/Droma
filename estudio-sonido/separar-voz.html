@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101110">
+<meta name="description" content="Separa la voz y la música de una canción con IA en tu navegador. Escucha y descarga ambas pistas en WAV, gratis en Dröma.">
+<meta name="robots" content="noindex">
+<title>Separar voz y música con IA — Dröma</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/separation/tool.css?v=20261018-separate">
+<link rel="stylesheet" href="../assets/scrollbars.css?v=20261018-scroll">
+</head>
+<body>
+<main class="separator" id="separate-workspace" aria-busy="false">
+ <header class="intro">
+  <div><span class="eyebrow"><span class="status-dot" aria-hidden="true"></span> IA · EN TU NAVEGADOR</span><h1>Una canción.<br><span>Dos nuevos caminos.</span></h1><p>Separa la voz del acompañamiento. Escucha cada parte y llévala a tu próximo proyecto.</p></div>
+  <div class="split-art" aria-hidden="true"><div class="art-source"><span>CANCIÓN</span><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="art-branches"><div><b>01</b><span>VOZ</span><svg viewBox="0 0 148 30"><path d="M2 15h14l3-8 5 17 4-22 5 25 4-17 4 8 4-3h15l4-8 4 17 4-23 5 24 4-20 4 16 4-6h14l4-8 4 17 5-22 4 24 4-14 4 3h15"/></svg></div><div><b>02</b><span>MÚSICA</span><svg viewBox="0 0 148 30"><path d="M2 15h7l3-6 4 12 4-18 4 24 4-23 4 18 4-13 4 6h7l4-11 4 23 4-26 4 27 4-21 4 12 4-4h7l4-12 4 24 4-25 4 22 4-18 4 12 4-3h8l4-8 4 17 4-24 4 22 4-15 4 8h7"/></svg></div></div></div>
+ </header>
+ <div class="workspace-grid">
+ <section class="panel input-panel" aria-labelledby="input-title">
+  <div class="panel-heading"><span class="step-number">01</span><h2 id="input-title">Tu canción</h2><span class="local-badge">Archivo local</span></div>
+  <label class="dropzone" id="song-drop" for="song-file"><input id="song-file" type="file" accept="audio/*,.mp3,.wav,.flac,.ogg,.m4a,.aac,.aiff" aria-describedby="format-note"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 27V7m-7 7 7-7 7 7M8 25v8h24v-8"/><path d="M5 20h3m24 0h3" opacity=".4"/></svg><strong>Elige o arrastra una canción</strong><span>Haz clic para buscar en tu equipo</span><small id="format-note">MP3, WAV y otros formatos compatibles · Hasta 150 MB</small></label>
+  <div class="song-preview" id="song-preview" hidden><div class="file-line"><strong id="song-name"></strong><span id="song-size"></span></div><div class="audio-label"><span>ORIGINAL</span><span id="song-duration"></span></div><audio id="original-audio" controls preload="metadata" aria-label="Escuchar canción original"></audio></div>
+  <div class="scope"><label for="separate-scope">¿Qué quieres separar?</label><select id="separate-scope"><option value="full">Canción completa · hasta 10 min</option><option value="preview">Prueba · primeros 30 segundos</option></select></div>
+  <div class="actions"><button class="primary" id="separate-start" type="button" disabled>Separar voz y música <span aria-hidden="true">↗</span></button><button class="secondary" id="separate-cancel" type="button" hidden>Cancelar</button><button class="text-button" id="separate-clear" type="button" disabled>Vaciar</button></div>
+  <small class="quality-note" id="quality-note">El resultado puede contener restos de voz o de música, según la mezcla original.</small>
+  <p class="status" id="separate-status" role="status" aria-live="polite">Elige una canción para empezar.</p>
+ </section>
+ <aside class="panel about-panel" aria-labelledby="about-title"><div class="panel-heading"><span class="step-number">02</span><h2 id="about-title">La IA hace su parte</h2></div><div class="feature"><span aria-hidden="true">↙</span><div><h3>Una primera descarga</h3><p>La primera vez se descarga un modelo de unos 180 MB. Se conserva en este navegador cuando hay espacio.</p></div></div><div class="feature"><span aria-hidden="true">⌁</span><div><h3>Tu audio se queda contigo</h3><p>La canción se procesa en tu equipo. No se envía a un servidor.</p></div></div><div class="feature"><span aria-hidden="true">↗</span><div><h3>Dos archivos para crear</h3><p>Voz y música, con escucha y descarga independiente en WAV estéreo de 16 bits y 44,1 kHz.</p></div></div><div class="time-note"><span class="status-dot" aria-hidden="true"></span><p>Puede tardar varios minutos. Utiliza un ordenador con un navegador actualizado y mantén esta pestaña abierta. Empieza por la prueba de 30 segundos para valorar el resultado.</p></div></aside>
+ </div>
+ <section class="panel progress-panel" id="separate-progress" aria-labelledby="progress-stage" hidden><div class="progress-heading"><h2 id="progress-stage">Preparar canción</h2><span id="progress-percent">En curso</span></div><progress id="progress-bar" max="1" aria-label="Progreso de la fase actual"></progress><div class="progress-meta"><p id="progress-detail"></p><span id="progress-elapsed">0:00</span></div></section>
+ <section class="results" id="separate-results" aria-labelledby="results-title" hidden><div class="results-heading"><div><span class="eyebrow">TU CANCIÓN, SEPARADA</span><h2 id="results-title">Escucha lo que viene después.</h2></div><span id="result-duration"></span></div><div class="result-grid"><article class="panel stem"><span class="stem-label">PISTA 01</span><div class="stem-title"><h3>La voz.</h3><span aria-hidden="true">⌁</span></div><p>La interpretación, en primer plano.</p><audio id="vocal-audio" controls preload="metadata" aria-label="Escuchar voz separada"></audio><a id="vocal-download" class="download" download>Descargar voz <span>WAV ↙</span></a></article><article class="panel stem"><span class="stem-label">PISTA 02</span><div class="stem-title"><h3>La música.</h3><span aria-hidden="true">≋</span></div><p>El acompañamiento, con su propio espacio.</p><audio id="music-audio" controls preload="metadata" aria-label="Escuchar música separada"></audio><a id="music-download" class="download" download>Descargar música <span>WAV ↙</span></a></article></div><p class="quality-note" id="result-level" hidden>Se ha ajustado el nivel de ambas pistas con la misma ganancia para evitar la saturación.</p><small class="quality-note">El resultado puede contener restos de voz o de música, según la mezcla original.</small></section>
+ <footer class="tool-footer"><p>© 2026 · Un proyecto de VIVA MDCI · Diseñado por Fernando J. Lumbreras en Madrid (España)</p><details><summary>Motor y licencias</summary><p>Separación con HTDemucs (Meta), adaptación para navegador Demucs-Web (timcsy) y ONNX Runtime (Microsoft). <a href="../assets/separation/licenses/Demucs-LICENSE.txt" target="_blank" rel="noopener noreferrer">Demucs · MIT</a> · <a href="../assets/separation/licenses/Demucs-Web-MIT.txt" target="_blank" rel="noopener noreferrer">Demucs-Web · MIT</a> · <a href="../assets/separation/licenses/ONNX-Runtime-LICENSE.txt" target="_blank" rel="noopener noreferrer">ONNX Runtime · MIT</a></p></details></footer>
+</main>
+<script type="module" src="../assets/separation/ui.mjs?v=20261018-separate"></script>
+</body>
+</html>
