@@ -1,4 +1,4 @@
-DRÖMA · AUDIO, IMAGEN Y VÍDEO · LOGO Y ANIMACIONES
+DRÖMA · AUDIO, IMAGEN, VÍDEO Y ELECTA
 
 INSTALAR O ACTUALIZAR
 1. Guarda una copia de tu carpeta actual de Dröma.
@@ -21,9 +21,23 @@ LA SUITE
 Audio Studio: https://fjlumbreras1977.github.io/vivastudio-editor/
 Photo Editor: https://fjlumbreras1977.github.io/photoeditor/
 Video Editor: https://fjlumbreras1977.github.io/VIDEO-EDITOR/
-Los tres editores abren sus URL originales en una pestaña nueva. El ZIP
-incluye la web de presentación y el estudio de doce herramientas de sonido.
+Electa: https://fjlumbreras1977.github.io/electa/
+Los tres editores y Electa abren sus URL originales en una pestaña nueva.
+El ZIP incluye la web de presentación y el estudio de doce herramientas de sonido.
 No copia el código de esos tres editores ni sincroniza sus proyectos.
+
+ELECTA · ESTUDIO ELECTORAL
+Página de presentación: electa/.
+Guía práctica: guias/informa-con-electa/.
+El botón Abrir Electa abre https://fjlumbreras1977.github.io/electa/.
+Introduce tus datos manualmente o desde CSV. Prepara resultados, hemiciclo,
+pactos, comparativa y participación. Descarga el HTML interactivo, alójalo
+en una dirección pública y copia su iframe en tu publicación.
+La exportación contiene una copia de los datos; no se actualiza sola.
+Para actualizarla, exporta de nuevo y reemplaza el archivo en la misma URL.
+Guarda el proyecto JSON para conservar tu trabajo fuera del navegador.
+El estudio gráfico avanzado tiene proyectos propios y exportaciones estáticas.
+Este ZIP presenta y enlaza Electa; no copia ni modifica su aplicación.
 
 SONIDO INTEGRADO
 Conserva TODOS los archivos de assets, incluidos .mjs, .js, .wasm y licencias.
