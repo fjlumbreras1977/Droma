@@ -138,7 +138,8 @@
     podcast: {number:'01 / PÓDCAST Y RADIO',title:'Historias que merecen<br>ser escuchadas.',text:'Graba una entrevista, limpia los cortes y encuentra el equilibrio entre voz y música. Diseña después la portada que acompañará a tu próximo episodio.',image:new URL("assets/creator.jpg", SITE_ROOT).href,alt:'Estudio de sonido con mesa de mezclas e instrumentos',label:'DALE VOZ A LO QUE IMPORTA.',href:new URL("guias/tu-primer-podcast/", SITE_ROOT).href,link:'Crea tu primer pódcast'},
     social: {number:'02 / REDES Y CONTENIDO',title:'Una idea que encuentra<br>su propia identidad.',text:'Prepara la voz, diseña las imágenes y monta tu vídeo en el formato de tu canal. Conecta sonido, diseño y movimiento para que cada publicación tenga tu personalidad.',image:new URL("assets/creator.jpg", SITE_ROOT).href,alt:'Equipo creativo de sonido en un estudio de producción',label:'DALE TU FORMA. COMPÁRTELO.',href:new URL("guias/de-la-idea-a-publicar/", SITE_ROOT).href,link:'Conecta audio, imagen y vídeo'},
     photo: {number:'03 / FOTOGRAFÍA Y DISEÑO',title:'Tu forma de mirar.<br>En cada detalle.',text:'Trabaja con luz, color y composición. Combina una fotografía, capas y tipografía para dar forma a una portada o una pieza visual con tu estilo.',image:new URL("assets/landscape.jpg", SITE_ROOT).href,alt:'Cumbre de montaña entre nubes, una imagen para explorar luz y color',label:'LO QUE VES TAMBIÉN CUENTA.',href:new URL("guias/disena-tu-portada/", SITE_ROOT).href,link:'Diseña tu primera portada'},
-    video: {number:'04 / VÍDEO Y MONTAJE',title:'Cada plano encuentra<br>su momento.',text:'Ordena tus clips, incorpora imágenes, títulos y una mezcla de voz y música. Prepara tu vídeo horizontal, vertical o cuadrado y comparte una historia con tu propio ritmo.',image:new URL("assets/landscape.jpg", SITE_ROOT).href,alt:'Paisaje de montaña como material visual para una pieza audiovisual',label:'DALE MOVIMIENTO A TU HISTORIA.',href:new URL("guias/tu-primer-video/", SITE_ROOT).href,link:'Monta tu primer vídeo'}
+    video: {number:'04 / VÍDEO Y MONTAJE',title:'Cada plano encuentra<br>su momento.',text:'Ordena tus clips, incorpora imágenes, títulos y una mezcla de voz y música. Prepara tu vídeo horizontal, vertical o cuadrado y comparte una historia con tu propio ritmo.',image:new URL("assets/landscape.jpg", SITE_ROOT).href,alt:'Paisaje de montaña como material visual para una pieza audiovisual',label:'DALE MOVIMIENTO A TU HISTORIA.',href:new URL("guias/tu-primer-video/", SITE_ROOT).href,link:'Monta tu primer vídeo'},
+    electa: {number:'05 / PERIODISMO Y DATOS',title:'Tus cifras. Un contexto<br>que se puede explorar.',text:'Prepara tus datos en Electa y crea resultados, hemiciclos y pactos interactivos. Da al lector herramientas para entender una elección y probar sus propias combinaciones.',image:new URL("assets/electa-cover.svg", SITE_ROOT).href,alt:'Hemiciclo ilustrativo de Electa con datos ficticios de ejemplo',label:'TÚ PREPARAS LOS DATOS. TU AUDIENCIA EXPLORA.',href:new URL("guias/informa-con-electa/", SITE_ROOT).href,link:'Prepara tu primera pieza electoral'}
   };
   const tabs = $$('.use-tab');
   function activateTab(tab, focus = false) {
@@ -280,7 +281,7 @@
 (() => {
   const frame = document.getElementById('sound-studio');
   if (frame) {
-    const studioDocument = 'app.html?v=20261018-logo-motion';
+    const studioDocument = 'app.html?v=20261026-electa';
     const routes = new Set(['audiogram','extract','duck','home','separate','noise','eq','master','mp3','tags','audio','ivoox','qr','library','batch','share','instructions']);
     const route = () => routes.has(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
     frame.src = studioDocument + '#' + route();
