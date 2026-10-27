@@ -1,4 +1,4 @@
-DRÖMA · AUDIO, IMAGEN, VÍDEO Y ELECTA
+DRÖMA · AUDIO, IMAGEN, VÍDEO, ELECTA Y SURVIES
 
 INSTALAR O ACTUALIZAR
 1. Guarda una copia de tu carpeta actual de Dröma.
@@ -22,7 +22,8 @@ Audio Studio: https://fjlumbreras1977.github.io/vivastudio-editor/
 Photo Editor: https://fjlumbreras1977.github.io/photoeditor/
 Video Editor: https://fjlumbreras1977.github.io/VIDEO-EDITOR/
 Electa: https://fjlumbreras1977.github.io/electa/
-Los tres editores y Electa abren sus URL originales en una pestaña nueva.
+Survies: https://fjlumbreras1977.github.io/survies/
+Los tres editores, Electa y Survies abren sus URL originales en una pestaña nueva.
 El ZIP incluye la web de presentación y el estudio de doce herramientas de sonido.
 No copia el código de esos tres editores ni sincroniza sus proyectos.
 
@@ -38,6 +39,18 @@ Para actualizarla, exporta de nuevo y reemplaza el archivo en la misma URL.
 Guarda el proyecto JSON para conservar tu trabajo fuera del navegador.
 El estudio gráfico avanzado tiene proyectos propios y exportaciones estáticas.
 Este ZIP presenta y enlaza Electa; no copia ni modifica su aplicación.
+
+SURVIES · ENCUESTAS ONLINE
+Página de presentación: survies/.
+Guía práctica: guias/escucha-con-survies/.
+El botón Abrir Survies abre https://fjlumbreras1977.github.io/survies/.
+Preguntas de una opción, varias opciones y respuesta abierta. Comparte el
+enlace o inserta el iframe, consulta resultados y descarga las respuestas CSV.
+Survies recoge las respuestas mediante su servicio online. El navegador
+conserva las claves de gestión. Descarga la copia privada desde el panel
+para importar el acceso en otro navegador o equipo. No compartas esa copia:
+los participantes utilizan el enlace público del formulario.
+Este ZIP presenta y enlaza Survies; no copia ni modifica su aplicación.
 
 SONIDO INTEGRADO
 Conserva TODOS los archivos de assets, incluidos .mjs, .js, .wasm y licencias.
