@@ -282,7 +282,7 @@
 (() => {
   const frame = document.getElementById('sound-studio');
   if (frame) {
-    const studioDocument = 'app.html?v=20261027-survies';
+    const studioDocument = 'app.html?v=20261030-vekta';
     const routes = new Set(['audiogram','extract','duck','home','separate','noise','eq','master','mp3','tags','audio','ivoox','qr','library','batch','share','instructions']);
     const route = () => routes.has(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
     frame.src = studioDocument + '#' + route();
