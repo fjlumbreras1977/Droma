@@ -1,4 +1,4 @@
-DRÖMA · AUDIO, IMAGEN, VÍDEO, ELECTA Y SURVIES
+DRÖMA · AUDIO, IMAGEN, VÍDEO, VEKTA, ELECTA Y SURVIES
 
 INSTALAR O ACTUALIZAR
 1. Guarda una copia de tu carpeta actual de Dröma.
@@ -23,7 +23,8 @@ Photo Editor: https://fjlumbreras1977.github.io/photoeditor/
 Video Editor: https://fjlumbreras1977.github.io/VIDEO-EDITOR/
 Electa: https://fjlumbreras1977.github.io/electa/
 Survies: https://fjlumbreras1977.github.io/survies/
-Los tres editores, Electa y Survies abren sus URL originales en una pestaña nueva.
+Vekta: https://fjlumbreras1977.github.io/Vekta/
+Los tres editores, Electa, Survies y Vekta abren sus URL originales en una pestaña nueva.
 El ZIP incluye la web de presentación y el estudio de doce herramientas de sonido.
 No copia el código de esos tres editores ni sincroniza sus proyectos.
 
@@ -51,6 +52,16 @@ conserva las claves de gestión. Descarga la copia privada desde el panel
 para importar el acceso en otro navegador o equipo. No compartas esa copia:
 los participantes utilizan el enlace público del formulario.
 Este ZIP presenta y enlaza Survies; no copia ni modifica su aplicación.
+
+VEKTA · VECTORIZACIÓN DE LOGOS
+Página de presentación: vekta/.
+Guía breve: guias/vectoriza-con-vekta/.
+Abrir Vekta enlaza https://fjlumbreras1977.github.io/Vekta/ (V mayúscula).
+Admite PNG, JPG, WebP y GIF compatibles. Modos Color, Póster y Blanco y negro;
+ajustes de paleta, detalle, resolución, motas y fondo. Descarga SVG y vista PNG.
+La vectorización se procesa en el dispositivo. El trazado aproxima el original;
+un SVG no recupera detalles ausentes en una imagen pequeña o comprimida.
+Este ZIP presenta y enlaza Vekta; no copia ni modifica su aplicación.
 
 SONIDO INTEGRADO
 Conserva TODOS los archivos de assets, incluidos .mjs, .js, .wasm y licencias.

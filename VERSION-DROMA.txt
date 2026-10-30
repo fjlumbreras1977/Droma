@@ -1,3 +1,3 @@
-DRÖMA · 2026.10.27-survies
-Tres editores: audio, fotografía y vídeo. Electa: estudio electoral. Survies: encuestas online. Doce herramientas de sonido.
+DRÖMA · 2026.10.30-vekta
+Tres editores: audio, fotografía y vídeo. Electa: estudio electoral. Survies: encuestas online. Vekta: logos en SVG. Doce herramientas de sonido.
 Logos enlazados al index.html de Dröma. Animaciones revisadas.
