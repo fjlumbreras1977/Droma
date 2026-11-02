@@ -1,4 +1,4 @@
-DRÖMA · AUDIO, IMAGEN, VÍDEO, VEKTA, ELECTA Y SURVIES
+DRÖMA · SUITE CREATIVA + DRÖMA PARA PERIODISTAS
 
 INSTALAR O ACTUALIZAR
 1. Guarda una copia de tu carpeta actual de Dröma.
@@ -63,6 +63,27 @@ La vectorización se procesa en el dispositivo. El trazado aproxima el original;
 un SVG no recupera detalles ausentes en una imagen pequeña o comprimida.
 Este ZIP presenta y enlaza Vekta; no copia ni modifica su aplicación.
 
+DRÖMA PARA PERIODISTAS
+Área diferenciada: para-periodistas/.
+Editor de noticias integrado: para-periodistas/editor-noticias/.
+Guía: guias/redacta-tu-noticia/.
+Catálogo: para-periodistas/plugins-wordpress/.
+Grafik: para-periodistas/grafik/.
+Guía: guias/crea-graficos-con-grafik/.
+Abrir Grafik enlaza https://fjlumbreras1977.github.io/Grafik/ (G mayúscula).
+Presentación y guía de seis tipos de gráficos, comparativas y salidas SVG,
+PNG, CSV y HTML. La aplicación Grafik se abre en su propia dirección;
+no está copiada ni modificada dentro de este ZIP.
+El editor de noticias tiene sus propios HTML, CSS, JavaScript y favicons.
+No necesita PHP ni base de datos. Sus borradores y versiones son locales;
+descarga proyectos JSON para conservar una copia fuera del navegador.
+El HTML para WordPress se traslada manualmente; no hay publicación directa.
+Los cuatro plugins se descargan desde los enlaces de Movistar Cloud
+facilitados por el proyecto. Sus ZIP no están incluidos en este paquete.
+La verificación de los plugins se atribuye a VIVA MDCI por indicación del
+responsable del proyecto. No se presenta como una auditoría independiente.
+El área también enlaza Audio Studio, Video Editor, Photo Editor, Electa y Survies.
+
 SONIDO INTEGRADO
 Conserva TODOS los archivos de assets, incluidos .mjs, .js, .wasm y licencias.
 El hosting debe servir .mjs como JavaScript y .wasm como WebAssembly.
@@ -80,7 +101,8 @@ Descarga tus resultados antes de cerrar o recargar las herramientas.
 
 REQUISITOS
 Hosting estático con HTTPS, navegador actualizado y memoria suficiente.
-No requiere WordPress, PHP, base de datos, Node ni servicios de pago.
+La web de Dröma y el editor no requieren PHP, base de datos ni Node.
+Los plugins del catálogo se instalan en WordPress y requieren su entorno.
 Para ajustar canónicas y crear sitemap.xml, opcionalmente ejecuta en tu
 ordenador: python CONFIGURAR-SEO.py https://tudominio.es/droma/
 Python solo es necesario para ese ajuste opcional, no en el alojamiento.
