@@ -1,0 +1,39 @@
+VIVA MEDIA TOOLS — EDITOR PERIODÍSTICO PRO
+Versión 1.0 · 2026
+
+INSTALACIÓN
+1. Descomprime el ZIP.
+2. Sube index.html, styles.css y app.js a la misma carpeta de tu hosting.
+3. Abre la URL de esa carpeta. No requiere PHP, base de datos ni dependencias externas.
+4. Se puede abrir index.html localmente; ciertas funciones del navegador (como portapapeles) pueden requerir HTTPS.
+
+FUNCIONES
+- Editor enriquecido, campos editoriales, plantillas, citas, tablas, imágenes remotas y enlaces.
+- Estadísticas, comprobaciones orientativas, campos SEO y URL amigable.
+- Borrador local automático, historial manual (15 versiones), importación/exportación de proyecto JSON.
+- Exportación HTML fragmento, página HTML, TXT, Markdown y documento HTML compatible con Word (.doc).
+- Impresión/PDF mediante el diálogo del navegador.
+- Modo concentración, tema claro/oscuro y diseño adaptable a móviles.
+- Limpiador de HTML, búsqueda/sustitución básica y comparación básica de palabras.
+
+LIMITACIONES CONOCIDAS
+- Los borradores y el historial viven en localStorage del navegador y no se sincronizan entre equipos; conviene descargar copias JSON.
+- La función Buscar y sustituir reemplaza texto sin formato y advierte antes de eliminar el formato del cuerpo.
+- Comparación de versiones: recuento de palabras y primera divergencia; no es un diff visual avanzado.
+- El formato .doc es HTML compatible con Word, no un archivo .docx nativo.
+- La corrección ortográfica depende del navegador y de los diccionarios instalados.
+- Las revisiones editoriales son indicativas; no verifican hechos, citas ni fuentes.
+- El editor usa los comandos de edición del navegador, cuya compatibilidad puede variar entre navegadores; no es un editor colaborativo.
+- No incluye servicios de IA, transcripción ni publicación directa en WordPress.
+- Las imágenes externas pueden requerir conexión; no se suben a ningún servidor propio.
+
+PRIVACIDAD
+El código no realiza llamadas a servicios propios. Los documentos permanecen en el navegador salvo que el usuario los exporte o inserte imágenes de URLs externas (que el navegador cargará desde sus servidores).
+
+RECOMENDACIÓN
+Usa HTTPS y exporta periódicamente un proyecto JSON para conservar una copia independiente.
+
+VERSION 1.1 — APARIENCIA DRÖMA
+Se ha aplicado la identidad visual negro grafito y verde luminoso de Dröma a cabecera, paneles, controles y estados, manteniendo la hoja de edición clara para lectura. Se conserva el cambio de tema y la adaptación responsive. No se han modificado las funciones del editor.
+
+VERSIÓN 1.3: Favicon Dröma en ICO, PNG y Apple touch icon.
