@@ -63,6 +63,15 @@ La vectorización se procesa en el dispositivo. El trazado aproxima el original;
 un SVG no recupera detalles ausentes en una imagen pequeña o comprimida.
 Este ZIP presenta y enlaza Vekta; no copia ni modifica su aplicación.
 
+FEEDIT · RSS Y WIDGETS DE TITULARES
+Presentación: para-periodistas/feedit/.
+Guía: guias/publica-titulares-con-feedit/.
+Acceso: https://feedit.absolutemusiclatina.workers.dev
+Genera RSS y configura widgets de titulares con siete diseños, colores,
+entradas y movimiento ajustables. El servicio externo no se copia ni se
+instala con este ZIP: la web de Dröma lo presenta y enlaza. Insertar un
+widget requiere que la web de destino permita su código HTML/iframe.
+
 DRÖMA PARA PERIODISTAS
 Área diferenciada: para-periodistas/.
 Editor de noticias integrado: para-periodistas/editor-noticias/.
