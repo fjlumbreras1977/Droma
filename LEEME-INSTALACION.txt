@@ -63,6 +63,14 @@ La vectorización se procesa en el dispositivo. El trazado aproxima el original;
 un SVG no recupera detalles ausentes en una imagen pequeña o comprimida.
 Este ZIP presenta y enlaza Vekta; no copia ni modifica su aplicación.
 
+QRAVE · GENERADOR DE CÓDIGOS QR
+Presentación: qrave/. Guía: guias/crea-tu-qr/.
+Abrir QRave enlaza https://fjlumbreras1977.github.io/QRcodex/.
+Diez tipos de contenido, colores, forma, texto y logo central. Descarga
+PNG o SVG; proyectos JSON e historial local. Lotes CSV de hasta 200
+SVG individuales, sin logo central. La aplicación externa no se copia
+ni se instala con este ZIP. El QR de ejemplo enlaza https://vivaradio.es.
+
 FEEDIT · RSS Y WIDGETS DE TITULARES
 Presentación: para-periodistas/feedit/.
 Guía: guias/publica-titulares-con-feedit/.
