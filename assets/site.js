@@ -103,9 +103,25 @@
     dropdownButton?.setAttribute('aria-expanded', String(open));
     if (open && !wasOpen) animateEntry($('#suite-menu'), [{opacity: 0, transform: 'translateY(-7px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 220});
   };
-  dropdownButton?.addEventListener('click', () => setDropdown(!dropdown.classList.contains('is-open')));
-  dropdown?.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') setDropdown(true); });
-  dropdown?.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') setDropdown(false); });
+  let openedByHover = false;
+  dropdownButton?.addEventListener('click', e => {
+    // A desktop hover must not cancel the user's first click; mobile uses click only.
+    const keepHoverOpen = e.detail > 0 && openedByHover;
+    openedByHover = false;
+    setDropdown(keepHoverOpen || !dropdown.classList.contains('is-open'));
+  });
+  dropdown?.addEventListener('pointerenter', e => {
+    if (e.pointerType === 'mouse' && window.matchMedia('(min-width: 1181px)').matches) {
+      openedByHover = !dropdown.classList.contains('is-open');
+      setDropdown(true);
+    }
+  });
+  dropdown?.addEventListener('pointerleave', e => {
+    if (e.pointerType === 'mouse' && window.matchMedia('(min-width: 1181px)').matches) {
+      openedByHover = false;
+      setDropdown(false);
+    }
+  });
   dropdown?.addEventListener('focusout', e => { if (!dropdown.contains(e.relatedTarget)) setDropdown(false); });
   document.addEventListener('click', e => { if (!dropdown?.contains(e.target)) setDropdown(false); });
   document.addEventListener('keydown', e => {
@@ -282,7 +298,7 @@
 (() => {
   const frame = document.getElementById('sound-studio');
   if (frame) {
-    const studioDocument = 'app.html?v=20261106-feedit';
+    const studioDocument = 'app.html?v=20261115-qrave';
     const routes = new Set(['audiogram','extract','duck','home','separate','noise','eq','master','mp3','tags','audio','ivoox','qr','library','batch','share','instructions']);
     const route = () => routes.has(location.hash.slice(1)) ? location.hash.slice(1) : 'home';
     frame.src = studioDocument + '#' + route();
